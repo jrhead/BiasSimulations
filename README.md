@@ -7,7 +7,7 @@ The following simulations are encoded:
 
 ## 1.0 Confounding
 
-All examples in this section pertain to the following DAG structure: $A \rightarrow Z \leftarrow Y$, where $Z$ is a confounder.
+All examples in this section pertain to the following DAG structure: $A \leftarrow Z \rightarrow Y$, where $Z$ is a confounder.
 
 **Scenaro 1:** A-Z and Y-Z edges are both positive
 
@@ -17,7 +17,7 @@ All examples in this section pertain to the following DAG structure: $A \rightar
 
 ## 2.0 Selection bias (simple)
 
-All examples in this section pertain to the following DAG structure: $A \leftarrow C \leftarrow Y$, where $C$ is a collider
+All examples in this section pertain to the following DAG structure: $A \rightarrow C \leftarrow Y$, where $C$ is a collider
 
 **Scenaro 1:** A-C and Y-C edges are both positive
 
@@ -27,7 +27,7 @@ All examples in this section pertain to the following DAG structure: $A \leftarr
 
 ### 2.1 Selection bias (intervening nodes)
 
-All examples in this section pertain to the following DAG structure: $A \leftarrow U_A \rightarrow C \leftarrow U_Y \ rightarrow Y$, where $C$ is a collider, and $U_A$ and $U_Y$ are unmeasured intermediate nodes between $A$ and $C$ and $A$ and $Y$, respectively.
+All examples in this section pertain to the following DAG structure: $A \leftarrow U_A \rightarrow C \leftarrow U_Y \rightarrow Y$, where $C$ is a collider, and $U_A$ and $U_Y$ are unmeasured intermediate nodes between $A$ and $C$ and $A$ and $Y$, respectively.
 
 **Scenaro 1:** All edges are positive
 
@@ -35,9 +35,9 @@ All examples in this section pertain to the following DAG structure: $A \leftarr
 
 ## 3.0 Information bias (differential misclassification of the exposure)
 
-All examples in this section pertain to the following DAG structure: $A \rightarrow A^* \leftarrow U \rightarrow Y$, where $A^*$ is the measured version of $A$ and $U$ is an unmeasured intermediate node between $A^*$ and $Y$.
+All examples in this section pertain to the following DAG structure: $A \rightarrow A^+ \leftarrow U \rightarrow Y$, where $A^+$ is the measured version of $A$ and $U$ is an unmeasured intermediate node between $A^+$ and $Y$.
 
-**Scenaro 1:** $U$ is positively associated with $A^*$ and $Y$
+**Scenaro 1:** $U$ is positively associated with $A^+$ and $Y$
 
-**Scenaro 2:** $U$ is positively associated with $A^*$ and negatively associated with $Y$
+**Scenaro 2:** $U$ is positively associated with $A^+$ and negatively associated with $Y$
 
